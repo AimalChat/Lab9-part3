@@ -117,4 +117,4 @@ plus();                         0                              9                
 numberPressed(1);               1                              9                    '+'
 minus();                        0                             10                    '-'
 numberPressed(4);               4                             10                    '-'
-equals();                       6                              0                    ' '
+equals();                       6                              0                    '-'
