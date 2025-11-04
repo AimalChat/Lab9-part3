@@ -22,6 +22,9 @@ public class CalcEngine
         displayValue = 0;
         previousOperator = ' ';
         leftOperand = 0;
+        System.out.println(displayValue);
+        System.out.println(previousOperator);
+        System.out.println(leftOperand);
     }
 
     /**
@@ -39,7 +42,9 @@ public class CalcEngine
      */
     public void numberPressed(int number)
     {
+        System.out.println(displayValue);
         displayValue = displayValue * 10 + number;
+        System.out.println(displayValue);
     }
 
     /**
@@ -47,9 +52,14 @@ public class CalcEngine
      */
     public void plus()
     {
+        System.out.println(displayValue);
+        System.out.println(previousOperator);
         applyPreviousOperator();
+        System.out.println(previousOperator);
         previousOperator = '+';
+        System.out.println(previousOperator);
         displayValue = 0;
+        System.out.println(previousOperator);
     }
 
     /**
@@ -57,9 +67,14 @@ public class CalcEngine
      */
     public void minus()
     {
+        System.out.println(displayValue);
+        System.out.println(previousOperator);
         applyPreviousOperator();
+        System.out.println(previousOperator);
         previousOperator = '-';
+        System.out.println(previousOperator);
         displayValue = 0;
+        System.out.println(displayValue);
     }
     
     /**
@@ -67,11 +82,20 @@ public class CalcEngine
      */
     public void equals()
     {
+        System.out.println(displayValue);
+        System.out.println(previousOperator);
         if(previousOperator == '+') {
             displayValue = leftOperand + displayValue;
+            System.out.println(previousOperator);
+            System.out.println(displayValue);
         }
-        else {
+        else if(previousOperator == '-'){
             displayValue = leftOperand - displayValue;
+            System.out.println(displayValue);
+        }else
+        {
+            //do nothing here!
+            System.out.println(displayValue);
         }
         leftOperand = 0;
     }
@@ -82,6 +106,8 @@ public class CalcEngine
     public void clear()
     {
         displayValue = 0;
+        previousOperator = ' ';
+        leftOperand = 0;
     }
 
     /**
@@ -117,13 +143,22 @@ public class CalcEngine
      */
     private void applyPreviousOperator()
     {
+        System.out.println();
         if(previousOperator == '+') {
+            System.out.println();
+            System.out.println();
             leftOperand += displayValue;
+            System.out.println();
         }
         else if(previousOperator == '-') {
+            System.out.println();
+            System.out.println();
             leftOperand -= displayValue;
+            System.out.println();
         }
         else {
+            System.out.println();
+            System.out.println();
             // There was no preceding operator.
             leftOperand = displayValue;
         }
